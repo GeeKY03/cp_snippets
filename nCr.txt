@@ -1,0 +1,6 @@
+int nCr(int n,int r){
+	int ans = fact[n];
+	ans = (1ll*ans*invfact[r])%mod;
+	ans = (1ll*ans*invfact[n-r])%mod;
+	return ans;
+}

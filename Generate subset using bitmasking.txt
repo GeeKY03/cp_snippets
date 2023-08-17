@@ -1,0 +1,25 @@
+
+string subset(ll n, string s) {
+	ll j = 0;
+	string res;
+	while (n > 0) {
+		if (n & 1) {
+			res.pb(s[j]);
+		}
+		j++;
+		n >>= 1;
+	}
+	return res;
+}
+
+void gen_sub(string s) {
+	string sttr = s;
+	ll n = s.size();
+	ll num = (1 << n) - 1; // (2^n)-1
+	for (int i = 1; i <= num; i++) {  // Initialize i=0 for an empty subset also
+		cout << subset(i, s) << endl;
+	}
+}
+// Important
+// gen_sub(string_name); To trigger the function
+
